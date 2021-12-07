@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.IO.Ports;
 using System.Diagnostics;
+using System.Threading;
 
 //while (!System.Diagnostics.Debugger.IsAttached)
   //  if (Console.KeyAvailable)
@@ -28,7 +29,7 @@ for (int i = 0; i < portNames.Count; i++)
             Console.WriteLine($">> Exxcepton '{ex.Message}'");
         }
     }
-        
+    System.Threading.Thread.Sleep(100000);
 }
 
 

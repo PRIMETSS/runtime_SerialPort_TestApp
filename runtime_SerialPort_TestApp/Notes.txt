@@ -8,6 +8,8 @@
 	(Path does not last reboot)
 	dotnet install to /C:/Data/Users/administrator/AppData/Local/Microsoft/dotnet/dotnet.exe
 
+	VS2022 Debugger not compatible with Win10IoT, manually copy with WinSCP
+
 	Build DotNet Library
 
 		cd D:\DATA\MyGitHub\runtime\src\libraries\System.IO.Ports
