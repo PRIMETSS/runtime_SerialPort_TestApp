@@ -9,27 +9,28 @@ using System.Threading;
 
 List<string> portNames = new List<string>();
 
-Console.WriteLine("Started!!!!!");
+Console.WriteLine("\nStarted!!!!!\n");
 
 portNames = SerialPort.GetPortNames().ToList();
 
-Console.WriteLine($"Serial Ports #{portNames.Count}");
+Console.WriteLine($"# Serial Ports = {portNames.Count}");
 for (int i = 0; i < portNames.Count; i++)
 {
-    Console.WriteLine($"Port[{i}] = '{portNames.ElementAt(i)}'");
+    Console.WriteLine($"\nPort[{i}] = '{portNames.ElementAt(i)}'");
     
-    Console.Write($"Attempt open Port[{i}] = '{portNames.ElementAt(i)}' == ");
+    Console.Write($"> Attempt open Port[{i}] = '{portNames.ElementAt(i)}'");
     using (var port = new SerialPort(portNames.ElementAt(i)))
     {
         try  {
             port.Open();
-            Console.WriteLine($"{port.IsOpen}");
+            Console.WriteLine($" IsOpen = [{port.IsOpen}]");
+            Console.WriteLine($"> Successful");
             port.Close();
         } catch (Exception ex) { 
-            Console.WriteLine($">> Exxcepton '{ex.Message}'");
+            Console.WriteLine($"\n>>>> Failure! Excepton: ['{ex.Message}']");
         }
     }
-    System.Threading.Thread.Sleep(100000);
+    Console.Write("\n");
 }
 
 
