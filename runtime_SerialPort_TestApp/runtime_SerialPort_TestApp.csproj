@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="System.IO.Ports">
+      <HintPath>..\..\runtime\artifacts\bin\System.IO.Ports\net6.0-windows-Debug\System.IO.Ports.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

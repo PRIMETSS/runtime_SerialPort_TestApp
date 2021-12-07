@@ -1,0 +1,15 @@
+﻿Prepare Pi
+
+	Set-Item WSMan:\localhost\Client\TrustedHosts -Value 10.1.1.10
+	Enter-PSSession -ComputerName 10.1.1.10 -Credential 10.1.1.10\administrator
+
+	Download dotnet core SDK with Install Script on Pi
+	https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
+	(Path does not last reboot)
+	dotnet install to /C:/Data/Users/administrator/AppData/Local/Microsoft/dotnet/dotnet.exe
+
+	Build DotNet Library
+
+		cd D:\DATA\MyGitHub\runtime\src\libraries\System.IO.Ports
+
+		DONT build in VS as this will cause Linux code to compile and causes OS Exception Error in GetPortNames()

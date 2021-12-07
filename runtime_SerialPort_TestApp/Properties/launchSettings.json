@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "runtime_SerialPort_TestApp": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "authenticationMode": "None",
+      "remoteDebugMachine": "10.1.1.28"
+    }
+  }
+}
