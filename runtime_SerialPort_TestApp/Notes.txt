@@ -8,10 +8,33 @@
 	(Path does not last reboot)
 	dotnet install to /C:/Data/Users/administrator/AppData/Local/Microsoft/dotnet/dotnet.exe
 
+	ARM
+		(Get-CimInstance CIM_Processor).Caption [ ARM Family 7 Model D03 Revision 4 ]
+		(Get-CimInstance CIM_Processor).DataWidth [ 32 ]
+
 	VS2022 Debugger not compatible with Win10IoT, manually copy with WinSCP
 
 	Build DotNet Library
 
+		Check All Pre Reqs 
+			https://github.com/dotnet/runtime/blob/main/docs/workflow/README.md (Not sure if have to download and man install Ninja, as was getting error below at time)
+			** Enable Long Paths breaks Ninja
+				
+				
+
+		Quick build to check arm arch
+			"build clr -c release -a arm"
+
 		cd D:\DATA\MyGitHub\runtime\src\libraries\System.IO.Ports
 
 		DONT build in VS as this will cause Linux code to compile and causes OS Exception Error in GetPortNames()
+
+	Errors:
+
+		The CMAKE_ASM_COMPILER:
+			C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.30.30705//bin/HostX86/arm/armasm.exe
+			is not a full path to an existing compiler tool.
+		Doesnt exist in VS2022, does in VS2019! (But cant target NET6.0 in VS2019!)
+			https://stackoverflow.com/questions/31595869/how-to-resolve-the-module-machine-type-x86-conflicts-with-target-machine-type
+			
+				
