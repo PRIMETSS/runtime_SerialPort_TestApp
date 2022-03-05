@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using System.Diagnostics;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 //while (!System.Diagnostics.Debugger.IsAttached)
   //  if (Console.KeyAvailable)
@@ -10,6 +11,10 @@ using System.Threading;
 List<string> portNames = new List<string>();
 
 Console.WriteLine("\nStarted!!!!!\n");
+Console.WriteLine($"RID: [{RuntimeInformation.RuntimeIdentifier}]");
+Console.WriteLine($"OSArchitecture: [{RuntimeInformation.OSArchitecture}]");
+Console.WriteLine($"OSDescription: [{RuntimeInformation.OSDescription}]");
+Console.WriteLine($"FrameworkDescription: [{RuntimeInformation.FrameworkDescription}]\n");
 
 portNames = SerialPort.GetPortNames().ToList();
 
